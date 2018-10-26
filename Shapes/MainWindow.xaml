@@ -1,0 +1,104 @@
+﻿<Window x:Class="Shapes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Shapes"
+        mc:Ignorable="d"
+        Title="Shapes" Height="auto" Width="auto" HorizontalAlignment="Center" FontFamily="sans-serif" FontSize="20" Background="LightGoldenrodYellow">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="0" x:Name="ResultColumnWidth"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Button x:Name="Angle2Sides" Grid.Column="0" Grid.Row="0" Click="ShowT1">
+            <Image Source="Images/Triangle01.png"  VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Margin="0,0,0,45" />
+        </Button>
+        <Label Content="Triangle by" Grid.Column="0" Grid.Row="0" Height="auto" Width="auto" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20" FontFamily="sans-serif" Margin="0,0,0,20"/>
+        <Label Content="2 sides and angle" Grid.Column="0" Grid.Row="0" Height="auto" Width="auto" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="16" FontFamily="sans-serif" />
+
+        <Button x:Name="Side2Angles" Grid.Column="0" Grid.Row="1" Click="ShowT2">
+            <Image Source="Images/Triangle02.png"  VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Margin="0,0,0,45" />
+        </Button>
+        <Label Content="Triangle by" Grid.Column="0" Grid.Row="1" Height="auto" Width="auto" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20" FontFamily="sans-serif" Margin="0,0,0,20" />
+        <Label Content="2 angles and side" Grid.Column="0" Grid.Row="1" Height="auto" Width="auto" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="16" FontFamily="sans-serif" />
+
+        <Button x:Name="ThreeSides" Grid.Column="0" Grid.Row="2" Click="ShowT3" >
+            <Image Source="Images/Triangle03.png"  VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Margin="0,0,0,45" />
+        </Button>
+        <Label Content="Triangle by" Grid.Column="0" Grid.Row="2" Height="auto" Width="auto" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20" FontFamily="sans-serif" Margin="0,0,0,20" />
+        <Label Content="three sides" Grid.Column="0" Grid.Row="2" Height="auto" Width="auto" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="16" FontFamily="sans-serif" />
+
+        <Label x:Name="SizeLabel" Content="Sizes" Grid.Column="2" Grid.Row="0" Visibility="Hidden" Height="auto" Width="auto" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" FontFamily="sans-serif" FontWeight="Bold" />
+        <ListBox x:Name="Size" Grid.Column="2" Grid.Row="0" Visibility="Hidden" Background="LightGoldenrodYellow" Margin="5, 30, 5, 0" FontSize="18" BorderThickness="0">
+            <ListBoxItem>Side a =</ListBoxItem>
+            <ListBoxItem>Side b =</ListBoxItem>
+            <ListBoxItem>Side c =</ListBoxItem>
+            <ListBoxItem>Angle α =</ListBoxItem>
+            <ListBoxItem>Angle β =</ListBoxItem>
+            <ListBoxItem>Angle γ =</ListBoxItem>
+        </ListBox>
+
+        <Label x:Name="PerimLabel" Content="Perimeter" Visibility="Hidden" Grid.Column="2" Grid.Row="1" Height="auto" Width="auto" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" FontFamily="sans-serif" Margin="0,15,0,0" FontWeight="Bold" />
+        <ListBox x:Name="Perim" Grid.Column="2" Grid.Row="1" Visibility="Hidden" Background="LightGoldenrodYellow" Margin="5, 50, 5, 0" FontSize="18" Height="30" VerticalAlignment="Top" BorderThickness="0">
+            <ListBoxItem>Perimeter =</ListBoxItem>
+        </ListBox>
+        <Label x:Name="ArLabel" Content="Area" Grid.Column="2" Grid.Row="1" Visibility="Hidden" Height="auto" Width="auto" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,90,0,0" FontSize="20" FontFamily="sans-serif" FontWeight="Bold" />
+        <ListBox x:Name="Ar" Grid.Column="2" Grid.Row="1" Visibility="Hidden" Background="LightGoldenrodYellow" Margin="5, 110, 5, 0" FontSize="18" Height="30" BorderThickness="0">
+            <ListBoxItem>Area =</ListBoxItem>
+        </ListBox>
+
+        <Label x:Name="RadiusLabel" Content="Radiuses" Grid.Column="2" Grid.Row="2" Visibility="Hidden" Height="auto" Width="auto" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" FontFamily="sans-serif" FontWeight="Bold" />
+        <ListBox x:Name="Rad" Grid.Column="2" Grid.Row="2" Visibility="Hidden" Background="LightGoldenrodYellow" Margin="5, 35, 5, 0" FontSize="18" Height="50" VerticalAlignment="Top" BorderThickness="0">
+            <ListBoxItem>R =</ListBoxItem>
+            <ListBoxItem>r =</ListBoxItem>
+        </ListBox>
+
+
+        <StackPanel x:Name="Panel" Visibility="Hidden" Grid.Column="1" Grid.Row="0" Width="auto" Height="auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="0" x:Name="ErrorColumnWidth"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                </Grid.RowDefinitions>
+                    <Label x:Name="PanelLabel1" Content="Side a" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="Black"/>
+                    <Label x:Name="PanelLabel2" Content="Side b" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="Black"/>
+                    <Label x:Name="PanelLabel3" Content="Angle γ" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="Black"/>
+                    <TextBox x:Name="PanelBox1" Grid.Column="1" Grid.Row="0" Height="25" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" />
+                    <TextBox x:Name="PanelBox2" Grid.Column="1" Grid.Row="1" Height="25" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                    <TextBox x:Name="PanelBox3" Grid.Column="1" Grid.Row="2" Height="25" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                    <Label x:Name="PanelError1" Content="" Grid.Column="2" Grid.Row="0" Foreground="Red" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="11" Visibility="Hidden"/>
+                    <Label x:Name="PanelError2" Content="" Grid.Column="2" Grid.Row="1" Foreground="Red" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="11" Visibility="Hidden"/>
+                    <Label x:Name="PanelError3" Content="" Grid.Column="2" Grid.Row="2" Foreground="Red" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="11" Visibility="Hidden"/>
+                    <TextBlock x:Name="PanelErrorBox" Grid.Column="2" Grid.Row="1" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0" FontSize="16" Foreground="Red" Visibility="Hidden" Background="LightGoldenrodYellow" TextWrapping="WrapWithOverflow">
+                    </TextBlock>
+                    <Button x:Name="ButtonCalculate" Content="Calculate" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="5,10,0,0" Height="auto" Width="auto" Padding="2" />
+            </Grid>
+        </StackPanel>
+
+        <Grid x:Name="PanelPicture1" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Visibility="Hidden" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="30">
+            <Image Source="Images/Triangle01.png"  VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" />
+        </Grid>
+        <Grid x:Name="PanelPicture2" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Visibility="Hidden" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="30">
+            <Image Source="Images/Triangle02.png"  VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" />
+        </Grid>
+        <Grid x:Name="PanelPicture3" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Visibility="Hidden" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="30">
+            <Image Source="Images/Triangle03.png"  VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" />
+        </Grid>
+
+    </Grid>
+</Window>

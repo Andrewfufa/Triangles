@@ -1,0 +1,15 @@
+D:\Andrew's Programs\Shapes\Shapes\bin\Debug\Shapes.exe.config
+D:\Andrew's Programs\Shapes\Shapes\bin\Debug\Shapes.exe
+D:\Andrew's Programs\Shapes\Shapes\bin\Debug\Shapes.pdb
+D:\Andrew's Programs\Shapes\Shapes\obj\Debug\Shapes.csprojAssemblyReference.cache
+D:\Andrew's Programs\Shapes\Shapes\obj\Debug\MainWindow.g.cs
+D:\Andrew's Programs\Shapes\Shapes\obj\Debug\App.g.cs
+D:\Andrew's Programs\Shapes\Shapes\obj\Debug\Shapes_MarkupCompile.cache
+D:\Andrew's Programs\Shapes\Shapes\obj\Debug\Shapes_MarkupCompile.lref
+D:\Andrew's Programs\Shapes\Shapes\obj\Debug\MainWindow.baml
+D:\Andrew's Programs\Shapes\Shapes\obj\Debug\Shapes.g.resources
+D:\Andrew's Programs\Shapes\Shapes\obj\Debug\Shapes.Properties.Resources.resources
+D:\Andrew's Programs\Shapes\Shapes\obj\Debug\Shapes.csproj.GenerateResource.cache
+D:\Andrew's Programs\Shapes\Shapes\obj\Debug\Shapes.csproj.CoreCompileInputs.cache
+D:\Andrew's Programs\Shapes\Shapes\obj\Debug\Shapes.exe
+D:\Andrew's Programs\Shapes\Shapes\obj\Debug\Shapes.pdb
